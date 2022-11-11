@@ -295,11 +295,16 @@
                             <img src="https://source.unsplash.com/PEJtZfT6C1Q/300x300"
                                  class="rounded-circle user_img">
                             <span class="online_icon"></span>
+                            
                         </div>
                         <div class="user_info">
-                            <span id='name'> Chat App </span>
+                            <span id='name'> Chat App </span>                            
+                        </div> 
+                        <div class="user_info">
+                            <button type="button" id="login_btn" name="login_btn" class="loginbtn">CHANGE</button>                          
                         </div>                        
-                    </div>                    
+                    </div>  
+                                 
                 </div>
                 <div class="card-body msg_card_body" id="bodyContent">
                 </div>
@@ -313,6 +318,9 @@
                         </div>
                     </div>
                 </div>
+                <div class="card-footer">
+                    <button type="button" id="delete_btn" name="delete_btn" class="loginbtn">delete</button>                          
+                </div>  
             </div>
         </div>
     </div>
@@ -403,6 +411,17 @@
             d1.insertAdjacentHTML('beforebegin', divData);
         }
     });
+    login_btn.addEventListener('click', (e) => {
+        var myName = prompt("Enter your name");
+        document.getElementById('name').innerHTML = myName;
+        database.removeValue()  
+
+    })
+
+    delete_btn.addEventListener('click', (e) => {
+        update(ref(database) .removeValue() )
+
+    })
 
 </script>
 
